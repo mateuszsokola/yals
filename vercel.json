@@ -1,0 +1,4 @@
+{
+    "rewrites": [{ "source": "/r/:id", "destination": "/api/redirect?id=:id" }]
+}
+  
