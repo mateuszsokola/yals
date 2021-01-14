@@ -80,7 +80,7 @@ export default function Home() {
               </div>
             </div>
           </Form>
-          {['error', 'success'].includes(status) && (<Alert showIcon message={message} type={status} />)}
+          {['error', 'success'].includes(status) && (<Alert showIcon message={message} type={status as 'error' | 'success'} />)}
         </div>
       </Content>
       <Footer className={styles.footer}>
