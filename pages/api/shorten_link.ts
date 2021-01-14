@@ -21,7 +21,7 @@ export default async (req: NowRequest, res: NowResponse) => {
     const entry = await db.db('links_db').collection('links_collection').insertOne({ link: req.body.link });
 
     res.statusCode = 201; // created
-    return res.json({ short_link: `http://localhost:3000/r/${entry.insertedId}` });
+    return res.json({ short_link: `${process.env.VERCEL_URL}/r/${entry.insertedId}` });
   }
 
   res.statusCode = 409; // conflict
